@@ -13,12 +13,12 @@ booking_disabled_message = 'close camping'
 
 
 def notify():
-    email = os.environ.get("FB_EMAIL")
-    password = os.environ.get("FB_PASSWORD")
-    group_chat_id = '2631152133672651'
+    email = os.environ.get('FB_EMAIL')
+    password = os.environ.get('FB_PASSWORD')
+    group_chat_id = os.environ.get('GROUP_CHAT_ID')
     message_link = "Check now: " + camping_homepage
     client = Client(email, password)
-    client.send(Message(text="BOT: CAMP BOOKINGS MAY BE OPEN AGAIN!!!"), thread_id=group_chat_id,
+    client.send(Message(text='BOT: CAMP BOOKINGS MAY BE OPEN AGAIN!!!'), thread_id=group_chat_id,
                 thread_type=ThreadType.GROUP)
     time.sleep(3)
     client.send(Message(text=message_link),
