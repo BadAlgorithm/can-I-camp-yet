@@ -23,7 +23,7 @@ def notify():
     time.sleep(3)
     client.send(Message(text=message_link),
                 thread_id=group_chat_id,
-                thread_type=ThreadType.USER)
+                thread_type=ThreadType.GROUP)
     client.logout()
 
 
